@@ -1,0 +1,42 @@
+/***********************************************************************
+* Program:
+*    Project 02, Monthly Budget
+*    Brother Birch, CS 124
+* Author:
+*    Kaden Payne
+* Summary: 
+*    This program will manage a user's personal finances for a month.
+*    Estimated:  1.25 hrs   
+*    Actual:     0.50 hrs
+*      Getting used to the emacs hotkeys are still hard.
+*      
+************************************************************************/
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+/**********************************************************************
+ * Main serves to keep track of the user's finances for a month.
+ ***********************************************************************/
+int main()
+{
+   //cout rules - ONLY KEEP IF NEEDED
+   cout.setf(ios::fixed);       //no sci not
+   cout.setf(ios::showpoint);   //always show decimal
+   cout.precision(2);           //always have 2 dec points.
+   
+   //Init vars
+   /*For this part
+     float taxes = 0;
+     float tithing = 0;
+     float other = 0;
+   */
+
+   //Vars
+   float income;
+   float taxes = 0;
+   float tithing = 0;
+   float other = 0;
+   return 0;
+}

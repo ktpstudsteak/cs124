@@ -1,0 +1,7 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+cout.setf(ios::fixed);       //no sci not
+cout.setf(ios::showpoint);   //always show decimal point
+cout.precision(2);           //two decimals for cents

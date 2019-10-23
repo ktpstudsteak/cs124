@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+   //Vars
+   char fullName[256];
+   int age;
+   float GPA;
+   char grade;
+
+   //cout rules
+   cout.setf(ios::fixed);
+   cout.setf(ios::showpoint);
+   cout.precision(1);
+
+   //Prompt user for age
+   cout << "How old are you?\n";
+   cin >> age;
+
+   //fullname prompt
+   cout << "What is your full name?\n";
+   cin.getline(fullName, 256);
+
+   
+}

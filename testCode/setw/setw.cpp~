@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+//Set how numbers will be displayed
+cout.setf(ios::fixed);        //no scientific notation
+cout.setf(ios::showpoint);    //always show the decimal for real numbers.
+cout.precision(2);            //2 Digits after Decimal
+
+int main()
+{
+   
+}
