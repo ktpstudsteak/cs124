@@ -14,11 +14,24 @@
 ************************************************************************/
 
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 /**********************************************************************
  * <MAIN DESCRIPTION HERE>
  ***********************************************************************/
+void displayTable(int numDays, int offset)
+{
+    cout << "Number of days? ";
+    cin >> numDays;
+
+    cout << "Offset? ";
+    cin >> offset;
+
+    
+
+}
+
 int main()
 {
    /*cout rules - ONLY KEEP IF NEEDED
