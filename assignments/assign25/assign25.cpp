@@ -61,7 +61,7 @@ void displayTable()
      
      if ((numDays + offset +1) % 7 != 0)
      {
-         cout << "\n\n";
+         cout << "\n";
      }
      
 }
