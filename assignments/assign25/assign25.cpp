@@ -19,7 +19,9 @@
 using namespace std;
 
 /**********************************************************************
- * <MAIN DESCRIPTION HERE>
+ *  DISPLAY TABLE
+ * displayTable will get the # of days and
+ * the offset and display the table
  ***********************************************************************/
 void displayTable()
 {
@@ -57,6 +59,10 @@ void displayTable()
     }    
 }
 
+/**********************************************************************
+ *  MAIN
+ * main will display the displayTable funtion
+ ***********************************************************************/
 int main()
 {  
     displayTable();
