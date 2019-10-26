@@ -56,6 +56,12 @@ void displayTable()
         {
             cout << "\n";
         }
+
+        // \n for the last day
+        if(i == numDays)
+        {
+            cout << "\n";
+        }
     }    
 }
 
