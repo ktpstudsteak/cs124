@@ -26,21 +26,21 @@ void displayTable()
     int numDays;
     int offset;
 
-    cout << "Number of days? ";
+    cout << "Number of days: ";
     cin >> numDays;
 
-    cout << "Offset? ";
+    cout << "Offset: ";
     cin >> offset;
 
     // Print week
-    cout << "  Su  Mo  Tu  We  Th  Fr  Sa\n   ";
+    cout << "  Su  Mo  Tu  We  Th  Fr  Sa\n";
 
     //Print offset 
     if (offset < 6)
     {
         for (int j = 0; j <= offset; j++)
         {
-            cout << "   ";
+            cout << "    ";
         }
         
     }
