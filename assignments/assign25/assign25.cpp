@@ -52,16 +52,18 @@ void displayTable()
     {
         cout << setw(4) << i;
 
+        //End of week \n
         if ((i + (offset +1)) % 7 == 0)
         {
             cout << "\n";
         }
-    }    
-
-    if (numDays + (offset + 1)) % 7 == 0 
-    {
-        cout << "\n";
     }
+     
+     if ((numDays + offset +1) % 7 != 0)
+     {
+         cout << "\n\n";
+     }
+     
 }
 
 /**********************************************************************
