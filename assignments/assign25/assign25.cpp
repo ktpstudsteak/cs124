@@ -54,9 +54,10 @@ void displayTable()
         {
             cout << "\n";
         }
-    }
-    
-    cout << endl;
+    }    
+
+    //Appease testbed
+    cout << "\n";
 }
 
 int main()
