@@ -56,13 +56,12 @@ void displayTable()
         {
             cout << "\n";
         }
-
-        // \n for the last day
-        if(i == numDays)
-        {
-            cout << "\n";
-        }
     }    
+
+    if (numDays + (offset + 1)) % 7 == 0 
+    {
+        cout << "\n";
+    }
 }
 
 /**********************************************************************
