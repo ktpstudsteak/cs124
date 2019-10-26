@@ -15,30 +15,53 @@
 
 #include <iostream>
 #include <iomanip>
+#include <cassert>
 using namespace std;
 
 /**********************************************************************
  * <MAIN DESCRIPTION HERE>
  ***********************************************************************/
-void displayTable(int numDays, int offset)
+void displayTable()
 {
+    int numDays;
+    int offset;
+
     cout << "Number of days? ";
     cin >> numDays;
 
     cout << "Offset? ";
     cin >> offset;
 
-    
+    // Print week
+    cout << "  Su  Mo  Tu  We  Th  Fr  Sa\n   ";
 
+    //Print offset 
+    if (offset < 6)
+    {
+        for (int j = 0; j <= offset; j++)
+        {
+            cout << "   ";
+        }
+        
+    }
+    
+    //print the days
+    for (int i = 1; i <= numDays; i++)
+    {
+        cout << setw(4) << i;
+
+        if ((i + (offset +1)) % 7 == 0)
+        {
+            cout << "\n";
+        }
+    }
+    
+    cout << endl;
 }
 
 int main()
-{
-   /*cout rules - ONLY KEEP IF NEEDED
-   cout.setf(ios::fixed);       //no sci not
-   cout.setf(ios::showpoint);   //always show decimal
-   cout.precision(2);           //always have 2 dec points.
-   */
-   
+{  
+    displayTable();
+
    return 0;
 }
