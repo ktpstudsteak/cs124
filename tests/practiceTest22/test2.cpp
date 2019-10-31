@@ -43,13 +43,13 @@ void numCheck(char letter)
    cin >> guess;
    count++;
 
-   if (guess > (char)letter)
+   if (guess > (int)letter)
    {
       cout << "Too high\n";
       count++;
    }
 
-   else if (guess < (char)letter)
+   else if (guess < (int)letter)
    {
       cout << "Too low\n";
       count++;
