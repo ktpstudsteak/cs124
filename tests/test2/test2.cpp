@@ -46,19 +46,22 @@ float sales()
    
 }
 /**********************************************************************
- * Display
+ * DISPLAY
  * Display output
  ***********************************************************************/
 void display(float runningTotal)
 {
-   cout << "Total amount: $" << runningTotal << endl;
+   cout << "Total amount: $" 
+        << runningTotal 
+        << endl;
 }
 
+/**********************************************************************
+ * MAIN
+ * Puts everything together
+ ***********************************************************************/
 int main()
 {
-   
-
-   
    float runningTotal = sales();
 
    display(runningTotal);
