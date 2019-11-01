@@ -45,6 +45,7 @@ float sales()
    return runningTotal;
    
 }
+
 /**********************************************************************
  * DISPLAY
  * Display output
