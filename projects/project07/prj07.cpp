@@ -20,7 +20,7 @@ using namespace std;
 //aid in nested calling later on
 int getMonth();
 int getYear();
-int numDaysInYear(int, int);
+int numDaysInYear(int);
 int numDaysInMonth(int, int);
 int computeOffset(int, int);
 
@@ -101,7 +101,7 @@ int numDaysInMonth(int month, int year) //WATCH IN CASE YEAR ISN'T NEEDED
  * NUM DAYS IN YEAR
  * Calculate days in year
  ***********************************************************************/
-int numDaysInYear(int month, int year)
+int numDaysInYear(int year)
 {
    if (isLeapYear(year))
    {
@@ -146,7 +146,21 @@ bool isLeapYear(int year)
  ***********************************************************************/
 int computeOffset(int month, int year)
 {
-   return 0;  
+   int sum = 0;
+
+   //Month
+   for (int i = 0; i < month; i++)
+   {
+      sum += numDaysInMonth(i, year);
+   }
+
+   //Year
+   for (int i = 1753; i < year; i++)
+   {
+      sum += numDaysInYear(i);
+   }
+   
+   return (sum % 7);
 }
 
 /**********************************************************************
@@ -155,7 +169,67 @@ int computeOffset(int month, int year)
  ***********************************************************************/
  void displayHeader(int month, int year)
  {
-    cout << "placeholder";
+    
+   if (month == 1)
+   {
+      cout << "January, "
+           << year << endl;
+   }
+   else if (month == 2)
+   {
+      cout << "Febuary, "
+           << year << endl;
+   }
+   else if (month == 3)
+   {
+      cout << "March, "
+           << year << endl;
+   }
+   else if (month == 4)
+   {
+      cout << "April, "
+           << year << endl;
+   }
+   else if (month == 5)
+   {
+      cout << "May, "
+           << year << endl;
+   }
+   else if (month == 6)
+   {
+      cout << "June, "
+           << year << endl;
+   }
+   else if (month == 7)
+   {
+      cout << "July, "
+           << year << endl;
+   }
+   else if (month == 8)
+   {
+      cout << "August, "
+           << year << endl;
+   }
+   else if (month == 9)
+   {
+      cout << "September, "
+           << year << endl;
+   }
+   else if (month == 10)
+   {
+      cout << "October, "
+           << year << endl;
+   }
+   else if (month == 11)
+   {
+      cout << "November, "
+           << year << endl;
+   }
+   else if (month == 12)
+   {
+      cout << "December, "
+           << year << endl;
+   }
  }
 
 /**********************************************************************
@@ -173,6 +247,5 @@ int computeOffset(int month, int year)
  ***********************************************************************/
 int main()
 {
-    
    return 0;
 }
