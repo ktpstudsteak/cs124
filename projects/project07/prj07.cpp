@@ -16,7 +16,8 @@
 #include <iomanip>
 using namespace std;
 
-//Declare funtion prototypes
+//Declare funtion prototypes to
+//aid in nested calling later on
 int getMonth();
 int getYear();
 int numDaysInYear(int, int);
@@ -35,7 +36,17 @@ void displayTable(int, int);
  ***********************************************************************/
 int getYear()
 {
-   return 0;
+   int year;
+
+   cout << "Enter year: ";
+
+   while (year < 1753)
+   {
+      cout << "Year must be 1753 or later." << endl;
+      cout << "Enter year: ";
+   }
+
+   return year;
 }
 
 /**********************************************************************
@@ -44,16 +55,59 @@ int getYear()
  ***********************************************************************/
 int getMonth()
 {
-   return 0; 
+   int month;
+
+   cout << "Enter a month number: ";
+   cin  >> month;  
+
+   while (month < 1 || month > 12)
+   {
+      cout << "Month must be between 1 and 12." << endl;
+      cout << "Enter a month number: ";
+      cin  >> month;
+   }
+
+   return month;
+}
+
+/**********************************************************************
+ * NUM DAYS IN MONTH
+ * Calculate the days in month
+ ***********************************************************************/
+int numDaysInMonth(int month, int year) //WATCH IN CASE YEAR ISN'T NEEDED
+{
+   if (month == 4 || month == 6 || month == 9 || month == 11)
+   {
+      return 30;
+   }
+   else if (month == 2)
+   {
+      if (isLeapYear(year))
+      {
+         return 29;
+      }
+      else
+      {
+         return 28;
+      }
+   }
+   else
+   {
+      return 31;
+   }
 }
 
 /**********************************************************************
  * NUM DAYS IN YEAR
- * Prompt user for input and display output
+ * Calculate days in year
  ***********************************************************************/
 int numDaysInYear(int month, int year)
 {
-   return 0;
+   if (isLeapYear(year))
+   {
+      return 366;
+   }
+   
 }
 
 /**********************************************************************
@@ -62,9 +116,6 @@ int numDaysInYear(int month, int year)
  ***********************************************************************/
 bool isLeapYear(int year)
 {
-   return 0;
-   /*
-
    if (year % 4 != 0)
     {
         return false;
@@ -84,8 +135,6 @@ bool isLeapYear(int year)
     {
         return true;
     }
-
-    */
 }
 
 /**********************************************************************
@@ -94,9 +143,8 @@ bool isLeapYear(int year)
  ***********************************************************************/
 int computeOffset(int month, int year)
 {
-   return 0;
+   
 }
-
 
 /**********************************************************************
  * DISPLAY HEADER
