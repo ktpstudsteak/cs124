@@ -39,12 +39,17 @@ int getYear()
    int year;
 
    cout << "Enter year: ";
+   cin  >> year;
 
    while (year < 1753)
    {
       cout << "Year must be 1753 or later." << endl;
       cout << "Enter year: ";
+      cin  >> year;
+      cout << endl;
    }
+
+   cout << endl;
 
    return year;
 }
@@ -82,14 +87,7 @@ int numDaysInMonth(int month, int year) //WATCH IN CASE YEAR ISN'T NEEDED
    }
    else if (month == 2)
    {
-      if (isLeapYear(year))
-      {
-         return 29;
-      }
-      else
-      {
-         return 28;
-      }
+      return 28 + isLeapYear(year);
    }
    else
    {
@@ -240,9 +238,7 @@ int computeOffset(int month, int year)
  {
     int numDays = numDaysInMonth(month, year);
     int offset = computeOffset(month, year);
-
-    for (int j = 0; j <= offset; j++)
-    {
+    
        // Print week
     cout << "  Su  Mo  Tu  We  Th  Fr  Sa\n";
 
@@ -273,7 +269,6 @@ int computeOffset(int month, int year)
          cout << "\n";
      }
     }
- }
 
 /**********************************************************************
  * MAIN
@@ -281,10 +276,9 @@ int computeOffset(int month, int year)
  ***********************************************************************/
 int main()
 {
-   int month; 
-   int year;
-   getMonth();
-   getYear();
+   int month = getMonth(); 
+   int year = getYear();
+   
    numDaysInYear(year);
    numDaysInMonth(month, year);
    computeOffset(month, year);
