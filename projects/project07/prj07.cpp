@@ -105,7 +105,7 @@ int computeOffset(int month, int year)
  void displayHeader(int month, int year)
  {
 
- }rompt user for month and year
+ }
 
 /**********************************************************************
  * DISPLAY TABLE
