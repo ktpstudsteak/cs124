@@ -6,7 +6,7 @@
 *    Kaden Payne
 * Summary: 
 *    <SUMMARY DESCRIPTION>
-*    on screen.
+*
 *    Estimated:  0.75 hrs   
 *    Actual:     0.20 hrs
 *      <COMPLAIN ABOUT EMACS>

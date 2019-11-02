@@ -1,11 +1,11 @@
 /***********************************************************************
 * Program:
-*    Assignment 12, Income
+*    Project 07, Calendat
 *    Brother Birch, CS 124
 * Author:
 *    Kaden Payne
 * Summary: 
-*    <SUMMARY DESCRIPTION>
+*    This program
 *    on screen.
 *    Estimated:  0.75 hrs   
 *    Actual:     0.20 hrs
@@ -13,6 +13,7 @@
 ************************************************************************/
 
 #include <iostream>
+
 using namespace std;
 
 /**********************************************************************
