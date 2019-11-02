@@ -107,7 +107,10 @@ int numDaysInYear(int month, int year)
    {
       return 366;
    }
-   
+   else
+   {
+      return 365;
+   }  
 }
 
 /**********************************************************************
@@ -143,25 +146,25 @@ bool isLeapYear(int year)
  ***********************************************************************/
 int computeOffset(int month, int year)
 {
-   
+   return 0;  
 }
 
 /**********************************************************************
- * DISPLAY HEADER
+ *  DISPLAY HEADER
  * Display month and year over table
  ***********************************************************************/
  void displayHeader(int month, int year)
  {
-
+    cout << "placeholder";
  }
 
 /**********************************************************************
- * DISPLAY TABLE
+ *  DISPLAY TABLE
  * Display the table with offset and correct mumber of days
  ***********************************************************************/
  void displayTable(int numDays, int offset)
  {
-
+    cout << "d";
  }
 
 /**********************************************************************
