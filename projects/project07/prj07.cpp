@@ -236,9 +236,43 @@ int computeOffset(int month, int year)
  *  DISPLAY TABLE
  * Display the table with offset and correct mumber of days
  ***********************************************************************/
- void displayTable(int numDays, int offset)
+ void displayTable(int month, int year)
  {
-    cout << "d";
+    int numDays = numDaysInMonth(month, year);
+    int offset = computeOffset(month, year);
+
+    for (int j = 0; j <= offset; j++)
+    {
+       // Print week
+    cout << "  Su  Mo  Tu  We  Th  Fr  Sa\n";
+
+    //Print offset 
+    if (offset < 6)
+    {
+        for (int j = 0; j <= offset; j++)
+        {
+            cout << "    ";
+        }
+        
+    }
+    
+    //print the days
+    for (int i = 1; i <= numDays; i++)
+    {
+        cout << setw(4) << i;
+
+        //End of week \n
+        if ((i + (offset +1)) % 7 == 0)
+        {
+            cout << "\n";
+        }
+    }
+     
+     if ((numDays + offset +1) % 7 != 0)
+     {
+         cout << "\n";
+     }
+    }
  }
 
 /**********************************************************************
@@ -247,5 +281,17 @@ int computeOffset(int month, int year)
  ***********************************************************************/
 int main()
 {
+   int month; 
+   int year;
+   getMonth();
+   getYear();
+   numDaysInYear(year);
+   numDaysInMonth(month, year);
+   computeOffset(month, year);
+
+   isLeapYear(year);
+
+   displayHeader(month, year);
+   displayTable(month, year);
    return 0;
 }
