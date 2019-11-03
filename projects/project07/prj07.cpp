@@ -14,6 +14,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include <cassert>
 using namespace std;
 
 //Declare funtion prototypes to
@@ -138,6 +139,7 @@ bool isLeapYear(int year)
     }
 }
 
+#define baseYear 1753
 /**********************************************************************
  * COMPUTE OFFSET
  * Produce the offset for the first day of the month
@@ -146,7 +148,7 @@ int computeOffset(int month, int year)
 {
    int sum = 0;
 
-   //Month
+   /*//Month
    for (int i = 0; i < month; i++)
    {
       sum += numDaysInMonth(i, year);
@@ -158,7 +160,25 @@ int computeOffset(int month, int year)
       sum += numDaysInYear(year);
    }
    
-   return (sum % 7);
+   return (sum % 7);*/
+   for (int countYear = baseYear; countYear < year; countYear++)
+   {
+      assert(numDaysInYear(countYear) == 366 ||
+             numDaysInYear(countYear) == 365);
+
+      sum += numDaysInYear(countYear);
+   }
+
+   //days in months
+   for (int countMonth = 1; countMonth < month; countMonth++)
+   {
+      assert(numDaysInMonth(countMonth, year) >= 28 &&
+             numDaysInMonth(countMonth, year) <= 31);
+
+      sum += numDaysInMonth(countMonth, year);
+   }
+
+   return (sum % 7) - 1;
 
 
    
