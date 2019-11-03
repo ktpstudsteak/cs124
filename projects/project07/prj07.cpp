@@ -47,7 +47,6 @@ int getYear()
       cout << "Year must be 1753 or later." << endl;
       cout << "Enter year: ";
       cin  >> year;
-      cout << endl;
    }
 
    cout << endl;
@@ -178,7 +177,7 @@ int computeOffset(int month, int year)
       sum += numDaysInMonth(countMonth, year);
    }
 
-   return (sum % 7) - 1;
+   return (sum % 7);
 
 
    
@@ -198,7 +197,7 @@ int computeOffset(int month, int year)
    }
    else if (month == 2)
    {
-      cout << "Febuary, "
+      cout << "February, "
            << year << endl;
    }
    else if (month == 3)
