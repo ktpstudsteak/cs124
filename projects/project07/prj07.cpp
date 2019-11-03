@@ -144,7 +144,7 @@ bool isLeapYear(int year)
  ***********************************************************************/
 int computeOffset(int month, int year)
 {
-   int days = 0;
+   int sum = 0;
 
    //Month
    for (int i = 0; i < month; i++)
