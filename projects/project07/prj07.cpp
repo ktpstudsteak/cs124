@@ -1,6 +1,6 @@
 /***********************************************************************
 * Program:
-*    Project 07, Calendat
+*    Project 07, Calendar
 *    Brother Birch, CS 124
 * Author:
 *    Kaden Payne
@@ -144,7 +144,7 @@ bool isLeapYear(int year)
  ***********************************************************************/
 int computeOffset(int month, int year)
 {
-   int sum = 0;
+   int days = 0;
 
    //Month
    for (int i = 0; i < month; i++)
@@ -155,10 +155,13 @@ int computeOffset(int month, int year)
    //Year
    for (int i = 1753; i < year; i++)
    {
-      sum += numDaysInYear(i);
+      sum += numDaysInYear(year);
    }
    
    return (sum % 7);
+
+
+   
 }
 
 /**********************************************************************
