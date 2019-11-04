@@ -33,7 +33,7 @@ int getGrades(int grades[], const int num)
       
 }
 
-void averageGrades(const int grades[], const int num)
+int averageGrades(const int grades[], const int num)
 {
    int sum = 0;
    for (int i = 0; i < num; i++)
