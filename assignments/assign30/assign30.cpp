@@ -21,7 +21,7 @@ const int TEN = 10;
  * GET GRADE
  * get the grades and add them to the array to be given to main
  ***********************************************************************/
-int getGrades(int grades[], const int num)
+void getGrades(int grades[], const int num)
 {
       for (int i = 0; i < num; i++)
       {
