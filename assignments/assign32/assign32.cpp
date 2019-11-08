@@ -8,7 +8,7 @@
 *    This program will count the letters in a string.
 *
 *    Estimated:  0.75 hrs   
-*    Actual:     0.20 hrs
+*    Actual:     0.20 hrs 
 *      
 ************************************************************************/
 
