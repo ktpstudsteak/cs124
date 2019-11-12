@@ -49,7 +49,7 @@ void prices(float * pBalance)
 {
    float amount;
    cout << "Cost of the date:\n";
-   cin  >> amount;
+   //cin  >> amount;
    *pBalance -= amount;
 
    cout << "\tDinner:    ";
