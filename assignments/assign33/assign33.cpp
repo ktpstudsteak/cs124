@@ -22,7 +22,12 @@ void date(float * pAccount);
  ***********************************************************************/
 void display(float amount, const char * name)
 {
+   cout.setf(ios::fixed);
+   cout.setf(ios::showpoint);
+   cout.precision(2);
 
+   cout << name << "'s balance: $" << amount << endl;
+   return;
 }
 
 /**********************************************************************
@@ -31,14 +36,14 @@ void display(float amount, const char * name)
 float getBalance(const char * name)
 {
    float balace;
-   cout << "What is " << name << "'s balance?";
+   cout << "What is " << name << "'s balance? ";
    cin  >> balace;
    
    return balace;
 }
 
 /**********************************************************************
- * display will prompt for prices
+ * prices will prompt for prices
  ***********************************************************************/
 void prices(float * pBalance)
 {
@@ -65,6 +70,20 @@ void prices(float * pBalance)
  ***********************************************************************/
 int main()
 {
+   float samAc = getBalance("Sam");
+   float sueAc = getBalance("Sue");
 
+   float * pAccount;
+   if (sueAc > samAc)
+      pAccount = &sueAc;
+   else
+   {
+      pAccount = &samAc;
+   }
+   
+   prices(pAccount);
+
+   display(samAc, "Sam");
+   display(sueAc, "Sue");
    return 0;
 }
