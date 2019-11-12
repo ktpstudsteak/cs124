@@ -48,7 +48,7 @@ float getBalance(const char * name)
 void prices(float * pBalance)
 {
    float amount;
-   cout << "Cost of the date: ";
+   cout << "Cost of the date:\n";
    cin  >> amount;
    *pBalance -= amount;
 
