@@ -11,6 +11,7 @@
 ************************************************************************/
 
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 void display(float amount, const char * name);
