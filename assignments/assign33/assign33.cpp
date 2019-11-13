@@ -19,7 +19,7 @@ float get(const char * name);
 void date(float * pAccount);
 
 /**********************************************************************
- * display will show the data
+ * display will show the data 
  ***********************************************************************/
 void display(float amount, const char * name)
 {
