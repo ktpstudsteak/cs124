@@ -19,7 +19,61 @@ float get(const char * name);
 void date(float * pAccount);
 
 /**********************************************************************
- * display will show the data 
+ * main will put everything together
+ ***********************************************************************/
+int main()
+{
+   float samAccount = get("Sam");
+   float sueAccount = get("Sue");
+
+   //who pays
+   float * pAccount;
+   if (sueAccount > samAccount)
+   {
+      pAccount = &sueAccount;
+   }
+   else
+   {
+      pAccount = &samAccount;
+      return 0;
+   }
+   
+   date(pAccount);
+
+   //output
+   display(samAccount, "Sam");
+   display(sueAccount, "Sue");
+}
+
+/**********************************************************************
+ * get will obtain the bank account information of the couple
+ ***********************************************************************/
+void date(float * pAccount)
+{
+   float amount;
+   float totalAmount = 0; 
+
+   cout << "Cost of the date:\n";
+   
+   cout << "\tDinner:    ";
+   cin  >> amount;
+   totalAmount += amount;
+
+   cout << "\tMovie:    ";
+   cin  >> amount;
+   totalAmount += amount;
+
+   cout << "\tIce cream:    ";
+   cin  >> amount;
+   totalAmount += amount;
+
+   *pAccount -= totalAmount;
+
+   return;
+}
+
+/**********************************************************************
+ * display will show the balances
  ***********************************************************************/
 void display(float amount, const char * name)
 {
@@ -27,64 +81,7 @@ void display(float amount, const char * name)
    cout.setf(ios::showpoint);
    cout.precision(2);
 
-   cout << name << "'s balance: $" << amount << endl;
+   cout << name << "'s balance: $" << amount;
+   
    return;
-}
-
-/**********************************************************************
- * getBalance will get the balances
- ***********************************************************************/
-float getBalance(const char * name)
-{
-   float balace;
-   cout << "What is " << name << "'s balance? ";
-   cin  >> balace;
-   
-   return balace;
-}
-
-/**********************************************************************
- * prices will prompt for prices
- ***********************************************************************/
-void prices(float * pBalance)
-{
-   float amount;
-   cout << "Cost of the date:\n";
-   //cin  >> amount;
-   *pBalance -= amount;
-
-   cout << "\tDinner:    ";
-   cin  >> amount;
-   *pBalance -= amount;
-
-   cout << "\tMovie:    ";
-   cin  >> amount;
-   *pBalance -= amount;
-
-   cout << "\tIce cream:    ";
-   cin  >> amount;
-   *pBalance -= amount;
-}
-
-/**********************************************************************
- * Main will put everything
- ***********************************************************************/
-int main()
-{
-   float samAc = getBalance("Sam");
-   float sueAc = getBalance("Sue");
-
-   float * pAccount;
-   if (sueAc > samAc)
-      pAccount = &sueAc;
-   else
-   {
-      pAccount = &samAc;
-   }
-   
-   prices(pAccount);
-
-   display(samAc, "Sam");
-   display(sueAc, "Sue");
-   return 0;
 }
