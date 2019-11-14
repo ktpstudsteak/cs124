@@ -15,10 +15,11 @@
 #include <strings.h>
 using namespace std;
 
+#define BUFFER 256
 /**********************************************************************
  * <MAIN DESCRIPTION HERE>
  ***********************************************************************/
-int countLetters(const char letter, const char text[])
+int countLetters(const char letter, char text[])
 {
    int count = 0;
    for (char *p = text; *p; p++)
@@ -28,8 +29,6 @@ int countLetters(const char letter, const char text[])
          count++;
       }
    }
-   int convert = 199;
-   
    return count;
 }
 
@@ -38,13 +37,17 @@ int countLetters(const char letter, const char text[])
  ***********************************************************************/
 int main()
 {
-   int buff = 256;
    char letter;
    cout << "Enter a letter: ";
    cin  >> letter;
    cin.ignore();
 
-   char text[256];
-   
+   char text[BUFFER];
+   cout << "Enter text: ";
+   cin.getline(text, BUFFER);
+
+   cout << "Number of '" << letter << "'s: "
+        <<  countLetters(letter, text) << endl;
+
    return 0;
 }
