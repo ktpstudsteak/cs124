@@ -49,5 +49,5 @@ int main()
    cout << "Number of '" << letter << "'s: "
         <<  countLetters(letter, text) << endl;
 
-   return 0;
+   return 0; 
 }
