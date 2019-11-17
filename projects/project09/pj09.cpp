@@ -32,15 +32,6 @@ int  readData(char story[][WORD]);
 void processPrompt(char text[]);
 
 /**********************************************************************
- * READ DATA
- * prompt for filename, read file
- ***********************************************************************/
-int readData()
-{
-   return 0;
-}
-
-/**********************************************************************
  * GET FILE NAME
  * get filename from user
  ***********************************************************************/
@@ -112,6 +103,8 @@ void processPrompt(char text[])
    //get user's input
    cin.getline(text, WORD);
 
+
+
    return;
 }
 
@@ -127,7 +120,7 @@ int main()
    //read the story
    int length = readData(story);
 
-   //getFileName(fileName[]);
+   cout << "Thank you for playing.\n";
 
 
    return 0;
