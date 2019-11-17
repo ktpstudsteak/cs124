@@ -41,20 +41,6 @@ int readData()
 }
 
 /**********************************************************************
- * MAIN
- * will put everything together
- ***********************************************************************/
-int main()
-{
-   char story[WORDS][WORD];
-
-   //read the story
-   int length = readData(story);
-
-   return 0;
-}
-
-/**********************************************************************
  * GET FILE NAME
  * get filename from user
  ***********************************************************************/
@@ -127,4 +113,22 @@ void processPrompt(char text[])
    cin.getline(text, WORD);
 
    return;
+}
+
+/**********************************************************************
+ * MAIN
+ * will put everything together
+ ***********************************************************************/
+int main()
+{
+   //char fileName[WORD];
+   char story[WORDS][WORD];
+
+   //read the story
+   int length = readData(story);
+
+   //getFileName(fileName[]);
+
+
+   return 0;
 }
