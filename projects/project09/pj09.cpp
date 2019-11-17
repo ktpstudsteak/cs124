@@ -16,7 +16,7 @@
 #include <fstream>
 using namespace std;
 
-//Define replacements
+//Define replacements for when reading from the text file
 #define WORD      32    //one word is 32 bits
 #define WORDS     256   //256 bits
 #define OPEN      ':'   //start
