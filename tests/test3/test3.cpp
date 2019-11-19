@@ -15,14 +15,15 @@
 //REMEBER AVG / 40 because 40 points
 #include <iostream>
 #include <fstream>
+#include <array>
 using namespace std;
 
 #define MAX 100
 
-char  getFileName(char fileName[]);        //cin filename
-float readFile(char fileName[], float grades[]);      //filename
-float avgGrades(float);     //array
-void  display(float);           //average
+char  getFileName(char fileName[]);                                  //cin filename
+int readFile(char fileName[], int grades[], int);                     //filename
+float avgGrades(int grades[], int);                                     //array
+void  display(float);                                                //average
 
 /**********************************************************************
  * GET FILE NAME
@@ -39,7 +40,7 @@ char getFileName(char fileName)
  * READ FILE
  * read data from file
  ***********************************************************************/
-float readFile(char fileName[], int num[])
+int readFile(char fileName[], int num[], int &count)
 {
    //create ifstream
    ifstream fin(fileName);
@@ -54,11 +55,11 @@ float readFile(char fileName[], int num[])
       return -1;
    }  
 
-   float num[MAX];
    int i;
    while (fin >> num[i])
    {
       i++;
+      count++;
    }
 
    //close fin
@@ -71,18 +72,34 @@ float readFile(char fileName[], int num[])
  * AVG GRADES
  * average the grades
  ***********************************************************************/
-float avgGrades(float grades[])
+float avgGrades(int grades[], int count)
 {
-   return 0.0;
+   int sum = 0;
+
+   /*auto lines = sizeof(grades) / sizeof(grades[0]);
+
+   for (int i = 0; i < lines; i++)
+   {
+      sum += grades[i];
+   }
+
+   return (sum / lines) / 40;*/
+
+   for (int i = 0; i < count; i++)
+   {
+      sum =+ grades[i];
+   }
+   
+   return (sum / count) / 40; 
 }
 
 /**********************************************************************
- * AVG GRADES
- * average the grades
+ * DISPLAY
+ * display the output
  ***********************************************************************/
-void display(float average)
+void display(float avg)
 {
-   return;
+   cout << "The average grade on the midterm is " << avg << "%\n";
 }
 
 /**********************************************************************
@@ -95,15 +112,18 @@ int main()
    cout.setf(ios::showpoint);   //always show decimal
    cout.precision(1);
    
+   int count;
    //Prompt for fileName
    char fileName[256];
    getFileName(fileName);
 
-   float grades[MAX];
+   int grades[MAX];
    
-   readFile(fileName, grades);
+   readFile(fileName, grades, count);
 
-   float avg = avgGrades(grades);
+   float avg = avgGrades(grades, count);
+
+   display(avg);
    
    return 0;
 }
