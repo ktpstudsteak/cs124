@@ -33,10 +33,10 @@ int readGradesFromFile(int grades[])
 
    int data;
 
-   while (fin >> data)
+   /*while (fin >> data)
    {
       i++;
-   }
+   }*/
    
 
    fin.close();
