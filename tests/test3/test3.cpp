@@ -21,7 +21,7 @@ using namespace std;
 #define MAX 100
 
 char  getFileName(char fileName[]);                                  //cin filename
-int readFile(char fileName[], int grades[], int);                     //filename
+int readFile(char fileName[], int grades[], int &count);                     //filename
 float avgGrades(int grades[], int);                                     //array
 void  display(float);                                                //average
 
