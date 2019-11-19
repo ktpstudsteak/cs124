@@ -123,7 +123,7 @@ int main()
 
    float avg = avgGrades(grades, count);
 
-   display(avg);
+   display(avg); 
    
    return 0;
 }
