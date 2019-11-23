@@ -5,26 +5,51 @@
 * Author:
 *    Kaden Payne
 * Summary: 
-*    <SUMMARY DESCRIPTION>
+*    This program will use memory allocation to display text back to a user.
 *
 *    Estimated:  0.75 hrs   
 *    Actual:     0.20 hrs
-*      <COMPLAIN ABOUT EMACS>
+* 
 ************************************************************************/
 
 #include <iostream>
 using namespace std;
 
 /**********************************************************************
- * <MAIN DESCRIPTION HERE>
+ * main will run the program
  ***********************************************************************/
 int main()
 {
-   /*cout rules - ONLY KEEP IF NEEDED
-   cout.setf(ios::fixed);       //no sci not
-   cout.setf(ios::showpoint);   //always show decimal
-   cout.precision(2);           //always have 2 dec points.
-   */
+   int size;
+
+   //Make sure this is empty
+   char *input = NULL;
    
+   cout << "Number of characters: ";
+   cin  >> size;
+   //Because I'm told to.
+   cin.ignore();
+
+   //String length enforcement
+   if (size > 0 && size < 999999999999)
+   {
+      input = new char[size];
+
+      //Get input
+      cout << "Enter Text: ";
+      cin.getline(input, size + 1);
+
+      cout << "Text: " << input << endl;
+
+      //dont forget to delete!
+      delete input;
+      input = NULL;
+   }
+
+   else
+   {
+      cout << "Allocation Failure!\n";
+   }
+
    return 0;
 }
