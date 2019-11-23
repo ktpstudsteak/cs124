@@ -212,7 +212,7 @@ void display(char story[][WORD], int length)
       }
    }
    
-   cout << endl;
+   //cout << endl;
    return;
 }
 
