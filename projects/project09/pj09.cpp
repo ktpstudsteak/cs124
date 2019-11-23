@@ -35,7 +35,7 @@ void processPrompt(char text[]);
  * GET FILE NAME
  * get filename from user
  ***********************************************************************/
-void getFileName(char fileName)
+void getFileName(char fileName[])
 {
    cout << "Please enter the filename of the Mad Lib: ";
    cin >> fileName;
@@ -93,7 +93,7 @@ void processPrompt(char text[])
 
    //display body
    for (char *p = text + 2 ; *p; p++)
-   {*p == '_'
+   {
       cout << (*p == '_' ? ' ' : (char)tolower(*p));
    }
    
