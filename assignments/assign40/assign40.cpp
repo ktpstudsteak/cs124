@@ -46,7 +46,7 @@ int main()
  ***********************************************************************/
 void getFileName(char * fileName)
 {
-   cout << "Please specify the file name: ";
+   cout << "Enter source filename: ";
    cin  >> fileName;
    return;
 }
@@ -149,8 +149,8 @@ void saveFile(char board[][3])
          
       }
    }
-   
-   cout << "File written \n";
+
+   cout << "File written\n";
    return;
 }
 
