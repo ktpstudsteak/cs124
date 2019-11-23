@@ -48,7 +48,7 @@ int main()
 
    else
    {
-      cout << "Allocation Failure!\n";
+      cout << "Allocation failure!\n";
    }
 
    return 0;
