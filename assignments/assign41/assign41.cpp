@@ -1,6 +1,6 @@
 /***********************************************************************
 * Program:
-*    Assignment 12, Income
+*    Assignment 41, Memory Allocation
 *    Brother Birch, CS 124
 * Author:
 *    Kaden Payne
