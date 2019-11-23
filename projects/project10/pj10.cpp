@@ -1,11 +1,11 @@
 /***********************************************************************
 * Program:
-*    Project 09, MadLib
+*    Project 10, MadLib
 *    Brother Birch, CS 124
 * Author:
 *    Kaden Payne
 * Summary: 
-*    This program a few functions for the Mad Lib
+*    This program is a fully functional MadLib.
 *
 *    Estimated:  0.75 hrs   
 *    Actual:     0.20 hrs
