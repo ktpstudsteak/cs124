@@ -30,6 +30,27 @@ using namespace std;
 void getFileName(char fileName[]);
 int  readData(char story[][WORD]);
 void processPrompt(char text[]);
+void display(char story[][WORD], int length);
+void playAgain();
+
+/**********************************************************************
+ * MAIN
+ * will put everything together
+ ***********************************************************************/
+int main()
+{
+   //char fileName[WORD];
+   char story[WORDS][WORD];
+
+   //get the length
+   int length = readData(story);
+
+   //display the story
+   display(story, length);
+
+   playAgain();
+   return 0;
+}
 
 /**********************************************************************
  * GET FILE NAME
@@ -46,7 +67,7 @@ void getFileName(char fileName[])
 /**********************************************************************
  * READ DATA
  * get filename, replace text, and return the operation
- ***********************************************************************/
+ ***********************************************length************************/
 int readData(char story[][WORD])
 {
    char fileName[256];
@@ -102,26 +123,124 @@ void processPrompt(char text[])
    
    //get user's input
    cin.getline(text, WORD);
-
-
-
    return;
 }
 
 /**********************************************************************
- * MAIN
- * will put everything together
+ * DISPLAY
+ * read the story
  ***********************************************************************/
-int main()
+void display(char story[][WORD], int length)
 {
-   //char fileName[WORD];
-   char story[WORDS][WORD];
+   //Set up bools for where and when spaces are added
+   bool beforeChar, afterChar;
+   beforeChar = false;
+   afterChar = false;
 
-   //read the story
-   int length = readData(story);
+   //empty line to separate from input
+   cout << "\n";
 
-   cout << "Thank you for playing.\n";
+   
+   for (int i = 0; i < length; i++)
+   {
+      //put spaces before and after words
+      beforeChar = afterChar;
+      afterChar  = true;
 
+      if (story[i][0] == OPEN)
+      {
+         //placeholder var for triggers
+         char trigger = story[i][1];
+         
+         //Thank goodness for switch statements!!!
+         /* Just go down the list for switch.
+         #define ENDL      '!'   //newline
+         #define PERIOD    '.'   //period
+         #define COMMA     ','   //comma
+         #define OPQUOTE   '<'   //open double quote
+         #define CLQUOTE   '>'   //close double quote*/
 
-   return 0;
+         switch (trigger)
+         {
+         case ENDL:
+            trigger = '\n'; 
+            //spaces
+            beforeChar = afterChar = false;
+            break;
+         
+         case PERIOD:
+            trigger = '.';
+            beforeChar = false;
+            break;
+         
+         case COMMA:
+            beforeChar = false;
+            trigger = ',';
+            break;
+
+         case OPQUOTE:
+            afterChar = false;
+            trigger = '"';
+            break;
+         
+         case CLQUOTE:
+            beforeChar = false;
+            trigger = '"';
+            break;
+
+         default:
+         cout << "There's something wrong with the input file. See here: " 
+              << story[i] << endl;
+         trigger = '\0';
+         }
+         //first char of word
+         story[i][0] = trigger;
+         //Next char
+         story[i][1] = '\0';
+      }
+
+      //display story with spaced out words
+      if (beforeChar)
+      {
+         cout << ' ';
+         cout << story[i];
+      }
+      
+      else
+      {
+         cout << story[i];
+      }
+   }
+   
+   cout << endl;
+   return;
+}
+
+/**********************************************************************
+ * PLAY AGAIN
+ * ask the user to play again
+ ***********************************************************************/
+void playAgain()
+{
+   char responce;
+   
+   cout << "\nDo you want to play again (y/n)? ";
+   cin  >> responce;
+
+   if (responce == 'y')//|| "yes" || 'Y' || "Yes" )
+   {
+      //run main again.
+      main();
+   }
+   else if (responce == 'n')
+   {
+      cout << "Thank you for playing.\n";
+      return;   
+   }
+   else
+   {
+      cout << "Command \"" << responce << "\" not understood.\n" 
+           << "Do you want to play again? (y/n)";
+   }
+   return;
 }
