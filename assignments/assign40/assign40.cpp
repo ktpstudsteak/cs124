@@ -15,9 +15,38 @@
 #include <fstream>
 #include <cassert>
 
+//Funtion Prototypes
+char getFileName(char fileName[]);
+char readFile(char fileName[], char board[]);
+char processChars(char board[]);
+char display(char board[]);
+void saveFile();
+
 using namespace std;
 
+/**********************************************************************
+ * prompt user for filename
+ ***********************************************************************/
+char getFileName(char fileName[])
+{
+   return;
+}
 
+/**********************************************************************
+ * read the data from the file
+ ***********************************************************************/
+char readFile(char fileName[], char board[])
+{
+   return;
+}
+
+/**********************************************************************
+ * process the trigger chars
+ ***********************************************************************/
+char processChars(char board[])
+{
+   return;
+}
 /**********************************************************************
  * main will put the other functions together
  ***********************************************************************/
