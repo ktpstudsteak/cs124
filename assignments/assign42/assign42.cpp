@@ -29,7 +29,7 @@ string generateSong(string list[], int num)
    
    for (int i = 0; i < num - 1; i++)
    {
-      output += list[i] + " bone connected to the " + list[i + 1] + " bone.\n";
+      output += list[i] + " bone connected to the " + list[i + 1] + " bone\n";
    }
    
 
