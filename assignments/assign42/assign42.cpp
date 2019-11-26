@@ -1,29 +1,68 @@
 /***********************************************************************
 * Program:
 *    Assignment 42, Dem Bones
-*    Brother Birch, CS 124
+*    Brother Birch, CS124
 * Author:
 *    Kaden Payne
 * Summary: 
-*    This program will generate the song "Dem Bones".
-*    Estimated:  0.75 hrs   
-*    Actual:     0.20 hrs
-*  
+*    This program will display the words to the song Dem Bones by
+*    using the string class
+*
+*    Estimated:  0.0 hrs   
+*    Actual:     0.0 hrs
+*      
 ************************************************************************/
 
 #include <iostream>
+#include <string>
 using namespace std;
 
+/********************************************************************
+ * GENERATE SONG
+ * This function will generate one long string that constitutes the
+ * complete song "Dem Bones."  Note that the list of bones is provided
+ * by the parameter list
+ ********************************************************************/
+string generateSong(string list[], int num)
+{
+   string output;
+   
+   for (int i = 0; i < num - 1; i++)
+   {
+      output += list[i] + " bone connected to the " + list[i + 1] + " bone.\n";
+   }
+   
+
+   return output;
+}
+
 /**********************************************************************
- * <MAIN DESCRIPTION HERE>
+ * MAIN
+ * In this program, MAIN is a driver program.  It will feed to generateSong()
+ * the list of bones and get back the complete song as a string.  MAIN will
+ * then display the song
  ***********************************************************************/
 int main()
 {
-   /*cout rules - ONLY KEEP IF NEEDED
-   cout.setf(ios::fixed);       //no sci not
-   cout.setf(ios::showpoint);   //always show decimal
-   cout.precision(2);           //always have 2 dec points.
-   */
+   string list[9] =
+   {
+      "toe",
+      "foot",
+      "leg",
+      "knee",
+      "hip",
+      "back",
+      "neck",
+      "jaw",
+      "head"
+   };
+
+   //string output;
+   // generate the song
+   string song = generateSong(list, 9);
+   
+   // display the results
+   cout << song;
    
    return 0;
 }
