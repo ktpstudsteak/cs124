@@ -126,7 +126,7 @@ bool readFile(const char *fileName, int board[][9])
       for (int j = 0; j < 9; j++)
       {
          fin >> board[i][j];
-         cout << board[i][j] << endl;
+         //cout << board[i][j] << endl;
       }    
    }
    //close up shop
