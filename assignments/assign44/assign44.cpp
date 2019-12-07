@@ -103,8 +103,16 @@ float computeAverageLinear(int list[], int num)
 {
    float averageLinear = 0.0;
 
-   // put your code here, probably including a collections of
-   // calls to linear()
+   float averageBinary = 0.0;
+   float interation = 0;
+   int   i = 0;
+
+   while (i < num)
+   {
+      interation += linear(list, num, list[i]);
+      i++;
+   }
+   averageBinary = (float)interation / (float)num;
 
    return averageLinear;
 }
@@ -121,9 +129,17 @@ float computeAverageLinear(int list[], int num)
 float computeAverageBinary(int list[], int num)
 {
    float averageBinary = 0.0;
+   float interation = 0;
+   int   i = 0;
 
-   // put your code here, probably including a collections of
-   // calls to binary()
+   while (i < num)
+   {
+      interation += binary(list, num, list[i]);
+      i++;
+   }
+   averageBinary = (float)interation / (float)num;
+   
+   
 
    return averageBinary;
 }
