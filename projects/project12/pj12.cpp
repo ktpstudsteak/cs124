@@ -241,6 +241,7 @@ void displayBoard(const int board[][9])
 void interact(int board[][9], string fileName)
 {
    char input;
+   string fileNames;
    bool bol = false;
    
    do
@@ -264,7 +265,8 @@ void interact(int board[][9], string fileName)
          //Show possible values
          break;
       case 'Q':
-         writeFile(fileName, board);
+         fileNames = getFileName("What file would you like to write your board to: ");
+         writeFile(fileNames, board);
          break;
       default:
          cout << "ERROR: Invalid command\n";
