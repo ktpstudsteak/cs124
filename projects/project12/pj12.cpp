@@ -119,12 +119,11 @@ bool readFile(const char *fileName, int board[][9])
       for (int j = 0; j < 9; j++)
       {
          fin >> board[i][j];
-      }
-
-      //close up shop
-      fin.close();
-      return true;
+      }    
    }
+   //close up shop
+   fin.close();
+   return true;
 }
 
 
@@ -134,6 +133,24 @@ bool readFile(const char *fileName, int board[][9])
  ***********************************************************************/
 bool writeFile(const char *fileName, const int board[][9])
 {
+   //open file
+   ofstream fout(fileName);
+   if (fout.fail())
+   {
+      return false;
+   }
+
+   //write data
+   for (int i = 0; i < 9; i++)
+   {
+      for (int j = 0; j < 9; j++)
+      {
+         fout << board[i][j]
+              << (j == 8 ? '\n' : ' ');
+      }
+   }
+   //close file
+   fout.close();
    return true;
 }
 
@@ -252,9 +269,44 @@ bool isBoardValid(const int board[][9])
 /**********************************************************************
  * EDIT SQUARE
  * Edit the square
+ * Make sure that the action is valid
  ***********************************************************************/
 void editSquare(int board[][9])
 {
+   //vars
+   int row;
+   int col;
+
+   getCoordinates(row, col);
+
+   //is the sqaure filled out?
+   if (board[row][col] > 0)
+   {
+      cout << "Error: Square '"
+           << nameOfCoordinate(row, col)
+           << "' is filled\n";
+      return;
+   }
+   
+   //get input
+   int value;
+   cout << "What is the value at '"
+        << nameOfCoordinate(row, col)
+        << "': ";
+   cin  >> value;
+
+   if (value >= 0 && value <= 9)
+   {
+      board[row][col]= value;
+   }
+   else
+   {
+      cout << "ERROR: Value '"
+           << value
+           << "' in square '"
+           << nameOfCoordinate(row, col)
+           << "' is invalid\n";
+   }
    return;
 }
 
