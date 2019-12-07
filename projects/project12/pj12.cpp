@@ -173,6 +173,7 @@ void displayOptions()
    cout << "   E  Edit one square\n";
    cout << "   S  Show the possible values for a square\n";
    cout << "   Q  Save and Quit\n";
+   cout << endl;
 }
 
 /**********************************************************************
