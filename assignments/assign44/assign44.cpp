@@ -105,7 +105,7 @@ float computeAverageLinear(int list[], int num)
 
    float averageBinary = 0.0;
    float interation = 0;
-   int   i = 0;
+   int   i = 0; 
 
    while (i < num)
    {
