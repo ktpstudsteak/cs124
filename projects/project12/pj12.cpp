@@ -70,7 +70,19 @@ int main(int argc, char **argv)
    //allow user interaction
    interact(board);
 
+   //get filename
+   fileName = getFileName("What file would you like to write your board to: ");
 
+   //Write the board on sccreen
+   if (writeFile(fileName.c_str(), board))
+   {
+      cout << "Board written successfully\n";
+   }
+   else
+   {
+      cout << "ERROR: Unable to write to file" << fileName << endl;
+   }
+   
    return 0;
 }
 
@@ -80,7 +92,11 @@ int main(int argc, char **argv)
  ***********************************************************************/
 string getFileName(const char *prompt)
 {
-   return "Returned";
+   string fileName;
+   cout << prompt;
+   cin  >> fileName;
+
+   return fileName;
 }
 
 /**********************************************************************
@@ -89,7 +105,26 @@ string getFileName(const char *prompt)
  ***********************************************************************/
 bool readFile(const char *fileName, int board[][9])
 {
-   return true;
+   //open the file
+   ifstream fin(fileName);
+   if (fin.fail())
+   {
+      cout << "ERROR Unable to open " << fileName << endl;
+      return false;
+   }
+   
+   //read the data
+   for (int i = 0; i < 9; i++)
+   {
+      for (int j = 0; j < 9; j++)
+      {
+         fin >> board[i][j];
+      }
+
+      //close up shop
+      fin.close();
+      return true;
+   }
 }
 
 
@@ -123,27 +158,27 @@ void displayOptions()
 void displayBoard(const int board[][9])
 {
    //display column header
-   cout << "   A B C D E F G H I";
+   cout << "   A B j D E F G H I";
 
-   //display the data                                       //Change to I and J
-   for (int r = 0; r < 9; r++)
+   //display the data                                       
+   for (int i = 0; i < 9; i++)
    {
       //Display row
-      cout << r + 1 << "  ";
-      for (int c = 0; c < 9; c++)
+      cout << i + 1 << "  ";
+      for (int j = 0; j < 9; j++)
       {
          //Either display the numners of a space. No 0's.
-         if (board[r][c] == 0)
+         if (board[i][j] == 0)
          {
             cout << ' ';
          }
          else
          {
-            cout << board[r][c];
+            cout << board[i][j];
          }
          
          //space between nums
-         switch (c)
+         switch (j)
          {
          case 2:
          case 5:
@@ -159,7 +194,7 @@ void displayBoard(const int board[][9])
       }
 
       //horizontal bar placement
-      if (r ==2 || r == 5)
+      if (i ==2 || i == 5)
       {
          cout << "   -----+-----+-----\n";
       }
@@ -173,6 +208,35 @@ void displayBoard(const int board[][9])
  ***********************************************************************/
 void interact(int board[][9])
 {
+   char input;
+
+   do
+   {
+      switch (input = toupper(input))
+      {
+      case '?':
+         displayOptions();
+         break;
+      case 'D':
+         displayBoard(board);
+         break;
+      case 'E':
+         editSquare(board);
+         break;
+      case 'S':
+         //Show possible values
+         break;
+      case 'Q':
+         //Save and quit
+         break;
+      default:
+         cout << "ERROR: Invalid command\n";
+         break;
+      }
+   } 
+   
+   while (input != 'Q');
+   
    return;
 }
 
