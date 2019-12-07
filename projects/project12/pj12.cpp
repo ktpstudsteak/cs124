@@ -60,7 +60,14 @@ int main(int argc, char **argv)
    {
       return 1;
    }
-
+   /*or (int i = 7; i < 9; i++ )
+   {
+      for(int j = 0; j<9;j++)
+      {
+         cout << board[7][0] << endl;
+      }
+   }*/
+   
    //Interact with the game
 
    //display the options and the board
@@ -119,6 +126,7 @@ bool readFile(const char *fileName, int board[][9])
       for (int j = 0; j < 9; j++)
       {
          fin >> board[i][j];
+         cout << board[i][j] << endl;
       }    
    }
    //close up shop
@@ -175,7 +183,7 @@ void displayOptions()
 void displayBoard(const int board[][9])
 {
    //display column header
-   cout << "   A B j D E F G H I";
+   cout << "   A B C D E F G H I" << endl;
 
    //display the data                                       
    for (int i = 0; i < 9; i++)
@@ -185,6 +193,13 @@ void displayBoard(const int board[][9])
       for (int j = 0; j < 9; j++)
       {
          //Either display the numners of a space. No 0's.
+         /* Try 
+         
+          if (board[i][j] == 0)
+         {
+            board[i][j] = ' ';
+         } */
+
          if (board[i][j] == 0)
          {
             cout << ' ';
@@ -226,10 +241,15 @@ void displayBoard(const int board[][9])
 void interact(int board[][9])
 {
    char input;
+   bool bol = false;
 
    do
    {
-      switch (input = toupper(input))
+      displayOptions();
+      cout << endl;
+      cin >> input;
+
+      switch (input)
       {
       case '?':
          displayOptions();
@@ -252,7 +272,7 @@ void interact(int board[][9])
       }
    } 
    
-   while (input != 'Q');
+   while (toupper(input) != 'Q');
    
    return;
 }
