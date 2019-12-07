@@ -302,6 +302,7 @@ void editSquare(int board[][9])
    //is the sqaure filled out?
    if (board[row][col] > 0)
    {
+      //cout << board[row][col] << endl;
       cout << "ERROR: Square '"
            << nameOfCoordinate(row, col)
            << "' is filled\n"
@@ -357,7 +358,7 @@ void getCoordinates(int & row, int & col)
 
       //convert
       col = text[0] - 'A';
-      row - text[1] - '1';
+      row = text[1] - '1';
 
       //are the new points valid?
       if (row >= 0 && row < 9 && col >= 0 && col < 9)
