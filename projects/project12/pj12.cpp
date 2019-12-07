@@ -302,7 +302,7 @@ void editSquare(int board[][9])
    //is the sqaure filled out?
    if (board[row][col] > 0)
    {
-      cout << "Error: Square '"
+      cout << "ERROR: Square '"
            << nameOfCoordinate(row, col)
            << "' is filled\n";
       return;
