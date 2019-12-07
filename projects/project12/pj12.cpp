@@ -246,7 +246,7 @@ void interact(int board[][9])
    do
    {
       
-      cout << endl;
+      cout << "> ";
       cin >> input;
 
       switch (input)
