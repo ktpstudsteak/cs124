@@ -56,7 +56,7 @@ int main(int argc, char **argv)
    
    //Open the file         Why do I need c_str()
    int board[9][9];
-   if (!readFile(fileName.c_str(), board)
+   if (!readFile(fileName.c_str(), board))
    {
       return 1;
    }
