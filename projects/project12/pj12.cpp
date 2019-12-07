@@ -156,6 +156,7 @@ bool writeFile(string fileName, const int board[][9])
               << (j == 8 ? '\n' : ' ');
       }
    }
+
    //close file
    fout.close();
    return true;
@@ -265,8 +266,8 @@ void interact(int board[][9], string fileName)
          //Show possible values
          break;
       case 'Q':
-         fileNames = getFileName("What file would you like to write your board to: ");
-         writeFile(fileNames, board);
+         //fileNames = getFileName("What file would you like to write your board to: ");
+         //writeFile(fileNames, board);
          break;
       default:
          cout << "ERROR: Invalid command\n";
@@ -274,7 +275,7 @@ void interact(int board[][9], string fileName)
       }
    } 
    
-   while (input = 'Q');
+   while (input != 'Q');
    
    return;
 }
