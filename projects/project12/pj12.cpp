@@ -117,7 +117,7 @@ bool readFile(const char *fileName, int board[][9])
    if (fin.fail())
    {
       cout << "ERROR Unable to open " << fileName << endl;
-      return false;
+      return false; 
    }
    
    //read the data
