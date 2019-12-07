@@ -122,6 +122,48 @@ void displayOptions()
  ***********************************************************************/
 void displayBoard(const int board[][9])
 {
+   //display column header
+   cout << "   A B C D E F G H I";
+
+   //display the data                                       //Change to I and J
+   for (int r = 0; r < 9; r++)
+   {
+      //Display row
+      cout << r + 1 << "  ";
+      for (int c = 0; c < 9; c++)
+      {
+         //Either display the numners of a space. No 0's.
+         if (board[r][c] == 0)
+         {
+            cout << ' ';
+         }
+         else
+         {
+            cout << board[r][c];
+         }
+         
+         //space between nums
+         switch (c)
+         {
+         case 2:
+         case 5:
+            cout << "|";
+            break;
+         case 8:
+            cout << endl;
+            break;
+         
+         default:
+            cout << " ";
+         }
+      }
+
+      //horizontal bar placement
+      if (r ==2 || r == 5)
+      {
+         cout << "   -----+-----+-----\n";
+      }
+   }
    return;
 }
 
