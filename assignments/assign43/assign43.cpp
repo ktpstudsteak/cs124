@@ -21,6 +21,10 @@ using namespace std;
  ***********************************************************************/
 int main(int argc, char** argv)
 {
+   cout.setf(ios::fixed);
+   cout.setf(ios::showpoint);
+   cout.precision(1);
+   
    for (int i = 1; i < argc; i++)
    {
       cout << atof(argv[i]) << " feet is "
