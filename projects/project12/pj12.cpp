@@ -25,7 +25,7 @@ bool   readFile(const char *fileName, int board[][9]);
 bool   writeFile(const char *fileName, const int board[][9]);
 void   displayOptions();
 void   displayBoard(const int board[][9]);
-void   interact(int board[][9]);
+void   interact(int board[][9], string fileName);
 bool   isBoardValid(const int board[][9]);
 void   editSquare(int board[][9]);
 void   displayPossible(const int board[][9]);
@@ -75,7 +75,7 @@ int main(int argc, char **argv)
    displayBoard(board);
 
    //allow user interaction
-   interact(board);
+   interact(board, fileName);
 
    //get filename
    fileName = getFileName("What file would you like to write your board to: ");
@@ -138,7 +138,7 @@ bool readFile(const char *fileName, int board[][9])
  * WRITE FILE
  * Write the file
  ***********************************************************************/
-bool writeFile(const char *fileName, const int board[][9])
+bool writeFile(string fileName, const int board[][9])
 {
    //open file
    ofstream fout(fileName);
@@ -238,7 +238,7 @@ void displayBoard(const int board[][9])
  * INTERACT
  * Allow the user to interact with the board
  ***********************************************************************/
-void interact(int board[][9])
+void interact(int board[][9], string fileName)
 {
    char input;
    bool bol = false;
@@ -264,7 +264,7 @@ void interact(int board[][9])
          //Show possible values
          break;
       case 'Q':
-         //Save and quit
+         writeFile(fileName, board);
          break;
       default:
          cout << "ERROR: Invalid command\n";
