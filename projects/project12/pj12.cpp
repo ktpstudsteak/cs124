@@ -38,14 +38,39 @@ string nameOfCoordinate(int row, int col);
  * MAIN
  * Read board, user interface, output to console
  ***********************************************************************/
-int main()
+int main(int argc, char **argv)
 {
-   /*cout rules - ONLY KEEP IF NEEDED
-   cout.setf(ios::fixed);       //no sci not
-   cout.setf(ios::showpoint);   //always show decimal
-   cout.precision(2);           //always have 2 dec points.
-   */
+   ///Open the board
+
+   string fileName;
+
+   //ask user for filename
+   if (argc != 2)
+   {
+      fileName = getFileName("Where is your board located? ");
+   }
+   else
+   {
+      fileName = argv[1];
+   }
    
+   //Open the file         Why do I need c_str()
+   int board[9][9];
+   if (!readFile(fileName.c_str(), board)
+   {
+      return 1;
+   }
+
+   //Interact with the game
+
+   //display the options and the board
+   displayOptions();
+   displayBoard(board);
+
+   //allow user interaction
+   interact(board);
+
+
    return 0;
 }
 
@@ -83,7 +108,12 @@ bool writeFile(const char *fileName, const int board[][9])
  ***********************************************************************/
 void displayOptions()
 {
-   return;
+   cout << "Options:\n";
+   cout << "?  Show these instructions\n";
+   cout << "D  Display the board\n";
+   cout << "E  Edit one square\n";
+   cout << "S  Show the possible values for a square\n";
+   cout << "Q  Save and Quit\n";
 }
 
 /**********************************************************************
