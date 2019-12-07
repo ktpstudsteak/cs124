@@ -249,7 +249,7 @@ void interact(int board[][9])
       cout << "> ";
       cin >> input;
 
-      switch (input)
+      switch (toupper(input))
       {
       case '?':
          displayOptions();
@@ -272,7 +272,7 @@ void interact(int board[][9])
       }
    } 
    
-   while (toupper(input) != 'Q');
+   while (input = 'Q');
    
    return;
 }
