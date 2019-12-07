@@ -242,10 +242,10 @@ void interact(int board[][9])
 {
    char input;
    bool bol = false;
-
+   
    do
    {
-      displayOptions();
+      
       cout << endl;
       cin >> input;
 
