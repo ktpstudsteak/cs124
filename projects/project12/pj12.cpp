@@ -230,7 +230,7 @@ void displayBoard(const int board[][9])
       {
          cout << "   -----+-----+-----\n";
       }
-   }
+   }  cout << endl;
    return;
 }
 
