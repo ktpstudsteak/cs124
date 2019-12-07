@@ -325,7 +325,33 @@ void displayPossible(const int board[][9])
  ***********************************************************************/
 void getCoordinates(int & row, int & col)
 {
-   return;
+   bool valid = false;
+
+   //convert to coordinates
+   while (!valid)
+   {
+      string text;
+      cout << "What are the coordinates of the square: ";
+      cin  >> text; 
+
+      //convert
+      col = text[0] - 'A';
+      row - text[1] - '1';
+
+      //are the new points valid?
+      if (row >= 0 && row < 9 && col >= 0 && col < 9)
+      {
+         valid = true;
+      }
+      else
+      {
+         cout << "ERROR: Square '" 
+              << text
+              << "' is invalid\n";
+      }
+      return;
+   }
+
 }
 
 /**********************************************************************
@@ -341,3 +367,10 @@ void getValues(bool possible[], int row, int col, const int board[][9])
  * NAME OF COORDINATE
  * Get the name of the coordinate
  ***********************************************************************/
+string nameOfCoordinate(int row, int col)
+{
+   string point;
+   point += (char)(col + 'A');
+   point += (char)(row + '1');
+   return point;
+}
