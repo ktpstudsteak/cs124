@@ -255,6 +255,7 @@ void interact(int board[][9], string fileName)
       {
       case '?':
          displayOptions();
+         cout << endl;
          break;
       case 'D':
          displayBoard(board);
