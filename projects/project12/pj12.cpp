@@ -168,11 +168,11 @@ bool writeFile(const char *fileName, const int board[][9])
 void displayOptions()
 {
    cout << "Options:\n";
-   cout << "    ?  Show these instructions\n";
-   cout << "D  Display the board\n";
-   cout << "E  Edit one square\n";
-   cout << "S  Show the possible values for a square\n";
-   cout << "Q  Save and Quit\n";
+   cout << "   ?  Show these instructions\n";
+   cout << "   D  Display the board\n";
+   cout << "   E  Edit one square\n";
+   cout << "   S  Show the possible values for a square\n";
+   cout << "   Q  Save and Quit\n";
 }
 
 /**********************************************************************
