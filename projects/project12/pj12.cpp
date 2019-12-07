@@ -22,7 +22,7 @@ using namespace std;
 
 string getFileName(const char *prompt);
 bool   readFile(const char *fileName, int board[][9]);
-bool   writeFile(const char *fileName, const int board[][9]);
+bool   writeFile(string fileName, const int board[][9]);
 void   displayOptions();
 void   displayBoard(const int board[][9]);
 void   interact(int board[][9], string fileName);
