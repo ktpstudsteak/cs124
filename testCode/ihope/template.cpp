@@ -1,30 +1,56 @@
 /***********************************************************************
 * Program:
-*    Assignment 12, Income
+*    Test 4, Word Count
 *    Brother Birch, CS 124
 * Author:
 *    Kaden Payne
 * Summary: 
-*    <SUMMARY DESCRIPTION>
+*    This program will count the number of words in a file.
 *
 *    Estimated:  0.75 hrs   
 *    Actual:     0.20 hrs
-*      <COMPLAIN ABOUT EMACS>
+*      
 ************************************************************************/
 
 #include <iostream>
+#include <cassert>
+#include <fstream>
+#include <string>
 using namespace std;
 
+
 /**********************************************************************
- * <MAIN DESCRIPTION HERE>
+ * GET FILE NAME
+ * Get the file from the user
  ***********************************************************************/
-int main()
+string getFileName(const char *prompt)
 {
-   /*cout rules - ONLY KEEP IF NEEDED
-   cout.setf(ios::fixed);       //no sci not
-   cout.setf(ios::showpoint);   //always show decimal
-   cout.precision(2);           //always have 2 dec points.
-   */
-   
+   string fileName;
+   cout << prompt;
+   cin  >> fileName;
+
+   return fileName;
+}
+/**********************************************************************
+ * MAIN
+ * Use the other functions to count the number of words in a file.
+ ***********************************************************************/
+int main(int argc, char **argv)
+{
+   //Get fileName
+   string fileName;
+
+   //ask user for filename
+   if (argc != 2)
+   {
+      fileName = getFileName("Please enter the filename: ");
+   }
+   else
+   {
+      fileName = argv[1];
+   }
+
+
    return 0;
 }
+

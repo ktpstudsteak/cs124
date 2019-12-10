@@ -79,22 +79,7 @@ int countWords(string fileName)
    fin.close();
    return words;
 }
-/**********************************************************************
- * GET FILE NAME
- * Get the file from the user
- ***********************************************************************/
-bool readFile(const char *fileName)
-{
-   //open the file
-   ifstream fin(fileName);
-   if (fin.fail())
-   {
-      cout << "ERROR Unable to open " << fileName << endl;
-      return false; 
-   }
 
-   
-}
 
 /**********************************************************************
  * GET FILE NAME
