@@ -39,7 +39,7 @@ void display(int numWords, string fileName)
    default:
       cout << "There are "
            << numWords
-           << "words in "
+           << " words in "
            << fileName
            << ".\n";
       break;
@@ -117,6 +117,8 @@ int main(int argc, char **argv)
    int numWords;
    numWords = countWords(fileName);
 
+   //display output
+   display(numWords, fileName);
 
    return 0;
 }
