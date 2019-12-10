@@ -36,6 +36,7 @@ void display(int numWords, string fileName)
       cout << "There is 1 word in "
            << fileName
            << ".\n";
+           break;
    default:
       cout << "There are "
            << numWords
