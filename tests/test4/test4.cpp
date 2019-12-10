@@ -33,7 +33,7 @@ void display(int numWords, string fileName)
            << " has no words.\n";
       break;
    case 1:
-      cout << "There are 1 words in "
+      cout << "There is 1 word in "
            << fileName
            << ".\n";
    default:
