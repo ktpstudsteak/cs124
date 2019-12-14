@@ -337,6 +337,7 @@ void editSquare(int board[][9])
            << "' in square '"
            << nameOfCoordinate(row, col)
            << "' is invalid\n";
+           cout << endl;
    }
    return;
 }
