@@ -1,6 +1,6 @@
 /***********************************************************************
 * Program:
-*    Project 12, Sudoku First Draft
+*    Project 13, Sudoku Final Draft
 *    Brother Birch, CS 124
 * Author:
 *    Kaden Payne
@@ -9,7 +9,7 @@
 *
 *    Estimated:  0.75 hrs   
 *    Actual:     0.20 hrs
-*      
+*    Getting the timeout errors fixed were really hard.
 ************************************************************************/
 
 #include <iostream>
