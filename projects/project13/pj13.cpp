@@ -310,8 +310,8 @@ void editSquare(int board[][9])
       //cout << board[row][col] << endl;
       cout << "ERROR: Square '"
            << nameOfCoordinate(row, col)
-           << "' is filled\n";
-           //<< endl;
+           << "' is filled\n"
+           << endl;
       return;
    }
    
