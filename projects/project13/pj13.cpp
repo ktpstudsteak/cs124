@@ -324,7 +324,7 @@ void editSquare(int board[][9])
         << nameOfCoordinate(row, col)
         << "': ";
    cin  >> value;
-   cout << endl;
+   //cout << endl;
 
    if (value >= 0 && value <= 9 && legal[value] == true)
    {
