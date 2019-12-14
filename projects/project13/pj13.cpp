@@ -361,7 +361,7 @@ void displayPossible(const int board[][9])
    //Display the results
    cout << "The possible values for '";
    displayCoordinate(row, col);
-   cout << "' are: " << endl;
+   cout << "' are: ";// << endl;
 
    //list the values
    bool first = true;
@@ -375,6 +375,7 @@ void displayPossible(const int board[][9])
          }
       cout << i;
       first = false;
+      cout << endl;
       }
    }
    cout << endl;
