@@ -30,7 +30,8 @@ bool   isBoardValid(const int board[][9]);
 void   editSquare(int board[][9]);
 void   displayPossible(const int board[][9]);
 void   getCoordinates(int & row, int & col);
-void   getValues(bool possible[], int row, int col, const int board[][9]);
+void   getValues(bool legal[], int row, int col, const int board[][9]);
+void   displayCoordinate(int row, int col);
 string nameOfCoordinate(int row, int col);
 
 
@@ -264,7 +265,7 @@ void interact(int board[][9], string fileName)
          editSquare(board);
          break;
       case 'S':
-         //Show possible values
+         displayPossible(board);
          break;
       case 'Q':
          //fileNames = getFileName("What file would you like to write your board to: ");
@@ -314,6 +315,9 @@ void editSquare(int board[][9])
       return;
    }
    
+   bool legal[10];
+   getValues(legal, row, col, board);
+
    //get input
    int value;
    cout << "What is the value at '"
@@ -322,7 +326,7 @@ void editSquare(int board[][9])
    cin  >> value;
    cout << endl;
 
-   if (value >= 0 && value <= 9)
+   if (value >= 0 && value <= 9 && legal[value] == true)
    {
       board[row][col]= value;
    }
@@ -343,7 +347,36 @@ void editSquare(int board[][9])
  ***********************************************************************/
 void displayPossible(const int board[][9])
 {
-   return;
+   //get coordinates
+   int row;
+   int col;
+
+   getCoordinates(row, col);
+
+   //find allowed value
+   bool legal[10];
+   getValues(legal, row, col, board);
+   
+   //Display the results
+   cout << "The possible values for '";
+   displayCoordinate(row, col);
+   cout << "' are: ";
+
+   //list the values
+   bool first = true;
+   for (int i = 1; i <= 9; i++)
+   {
+      if (legal[i])
+      {
+         if (!first)
+         {
+            cout << ", ";
+         }
+      cout << i;
+      first = false;
+      }
+   }
+   cout << endl;
 }
 
 /**********************************************************************
@@ -352,7 +385,10 @@ void displayPossible(const int board[][9])
  ***********************************************************************/
 void getCoordinates(int & row, int & col)
 {
+   char digit;
+   char letter;
    bool valid = false;
+
 
    //convert to coordinates
    while (!valid)
@@ -385,9 +421,38 @@ void getCoordinates(int & row, int & col)
  * GET VALUES
  * Get the values
  ***********************************************************************/
-void getValues(bool possible[], int row, int col, const int board[][9])
+void getValues(bool legal[], int row, int col, const int board[][9])
 {
+   //init possible
+   for (int i = 0; i < 10; i++)
+   {
+      legal[i] = true;
+   }
+
+   //search column
+   for (int r = 0; r < 9; r++)
+   {
+      legal[ board[r][col] ] = false;
+   }
+
+   //search row
+   for (int c = 0; c < 9; c++)
+   {
+      legal[ board[row][c] ] = false;
+   }
+   
+   //search inside square
+   int rowInside = row / 3 * 3;
+   int colInside = col / 3 * 3;
+   for (int r = rowInside; r < rowInside + 3; r++)
+      for (int c = 0; c < colInside + 3; c++)
+      {
+         legal[ board[r][c] ] = false;
+      }
+   //you can always clear the square
+   legal[0] = true;
    return;
+   
 }
 
 /**********************************************************************
@@ -400,4 +465,16 @@ string nameOfCoordinate(int row, int col)
    point += (char)(col + 'A');
    point += (char)(row + '1');
    return point;
+}
+
+/**********************************************************************
+ * DISPLAY COORDINATE
+ * display the coordinates
+ ***********************************************************************/
+void displayCoordinate(int row, int col)
+{
+   cout << (char)(col + 'A')
+        << row + 1;
+   
+   return;
 }
