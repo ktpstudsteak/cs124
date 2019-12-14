@@ -249,7 +249,7 @@ void interact(int board[][9], string fileName)
    do
    {
       
-      cout << "\n> ";
+      cout << "> ";
       cin >> input;
 
       switch (toupper(input))
@@ -396,7 +396,8 @@ void getCoordinates(int & row, int & col)
    {
       string text;
       cout << "What are the coordinates of the square: ";
-      cin  >> text; 
+      cin  >> text;
+      cout << endl; 
 
       //convert
       col = text[0] - 'A';
