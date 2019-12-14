@@ -375,14 +375,18 @@ void displayPossible(const int board[][9])
          }
       cout << i;
       first = false;
-      cout << endl;
+      //cout << endl;
       }
    }
-   cout << endl;
+   cout << endl << endl;
 }
 
 /**********************************************************************
- * GET COORDINATES
+ * GET COORDINATES   >    E  Edit one square
+   >    S  Show the possible values for a square
+   >    Q  Save and Quit
+   > 
+   >    A B C D E F G H I
  * Get the coordinates of the square
  ***********************************************************************/
 void getCoordinates(int & row, int & col)
